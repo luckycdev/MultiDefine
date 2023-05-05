@@ -1,3 +1,9 @@
+<meta charset="UTF-8">
+<meta name="description" content="Define multiple words at once">
+<meta name="keywords" content="Dictionary, Define, MultiDefine">
+<meta name="author" content="luckycdev">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 <script src="https://kit.fontawesome.com/bdb0f81e24.js" crossorigin="anonymous"></script>
 <body style="padding-bottom: 50px;background: linear-gradient(90deg, hsl(251, 55%, 38%) 0%, #85a8ff 100%); font-family: 'Open Sans'; font-size: 22px;">
@@ -16,84 +22,85 @@ var c = a.split(",");
 var d = c.length;
 var getiframes = document.getElementsByTagName('iframe');
 while (getiframes.length > 0) {
-  getiframes[0].parentNode.removeChild(getiframes[0]);
+getiframes[0].parentNode.removeChild(getiframes[0]);
 }
 var getp = document.getElementsByTagName('p');
 while (getp.length > 0) {
-  getp[0].parentNode.removeChild(getp[0]);
+getp[0].parentNode.removeChild(getp[0]);
 }
 for (var i=0;i<d;i++) {
-  var word=c[i].trim();
-  if (word!=='') {
-    var div=document.createElement('div');
-    div.setAttribute('align','center');
-    var p=document.createElement('p');
-    p.innerText=word;
-    var iframe=document.createElement('iframe');
-    iframe.setAttribute('src',b+word);
-    iframe.setAttribute('width','500px');
-    iframe.setAttribute('height','500px');
-    p.style.fontWeight='bold';
-    p.style.textDecoration='underline';
-    p.style.textTransform='uppercase';
-    div.appendChild(p);
-    div.appendChild(iframe);
-    document.body.appendChild(div);
-  }
+var word=c[i].trim();
+if (word!=='') {
+  var div=document.createElement('div');
+  div.setAttribute('align','center');
+  var p=document.createElement('p');
+  p.innerText=word;
+  var iframe=document.createElement('iframe');
+  iframe.setAttribute('src',b+word);
+  iframe.setAttribute('width','500px');
+  iframe.setAttribute('height','500px');
+  p.style.fontWeight='bold';
+  p.style.textDecoration='underline';
+  p.style.textTransform='uppercase';
+  p.style.color='white';
+  div.appendChild(p);
+  div.appendChild(iframe);
+  document.body.appendChild(div);
+}
 }
 }
 </script>
 </body>
 <style>
-  div.discord{
+div.discord{
+position:fixed;
+right:10px;
+bottom:10px;
+}
+div.github{
+position:fixed;
+right:50px;
+bottom:10px;
+}
+div.watermark{
   position:fixed;
-  right:10px;
+  left:10px;
   bottom:10px;
+}
+  .button {
+    position: relative;
+    background-color: #4c29c9;
+    border: none;
+    border-radius: 15px;
+    font-size: 28px;
+    color: #FFFFFF;
+    padding: 20px;
+    width: 200px;
+    text-align: center;
+    transition-duration: 0.4s;
+    text-decoration: none;
+    overflow: hidden;
+    cursor: pointer;
   }
-  div.github{
-  position:fixed;
-  right:50px;
-  bottom:10px;
+  .button:after {
+    content: "";
+    background: #5230cf;
+    display: block;
+    position: absolute;
+    padding-top: 300%;
+    padding-left: 350%;
+    margin-left: -20px !important;
+    margin-top: -120%;
+    opacity: 0;
+    transition: all 0.8s
   }
-  div.watermark{
-    position:fixed;
-    left:10px;
-    bottom:10px;
+  .button:active:after {
+    padding: 0;
+    margin: 0;
+    opacity: 1;
+    transition: 0s
   }
-    .button {
-      position: relative;
-      background-color: #4c29c9;
-      border: none;
-      border-radius: 15px;
-      font-size: 28px;
-      color: #FFFFFF;
-      padding: 20px;
-      width: 200px;
-      text-align: center;
-      transition-duration: 0.4s;
-      text-decoration: none;
-      overflow: hidden;
-      cursor: pointer;
-    }
-    .button:after {
-      content: "";
-      background: #5230cf;
-      display: block;
-      position: absolute;
-      padding-top: 300%;
-      padding-left: 350%;
-      margin-left: -20px !important;
-      margin-top: -120%;
-      opacity: 0;
-      transition: all 0.8s
-    }
-    .button:active:after {
-      padding: 0;
-      margin: 0;
-      opacity: 1;
-      transition: 0s
-    }
-    </style>
+  </style>
 <div align="center" class="discord"><a href="https://discord.gg/nAEtSVbcKx" target="_blank"><i class="fa-brands fa-discord" style="color:#5865F2;"></i></a>
 <div align="center" class="github"><a href="https://github.com/luckycdev/MultiDefine" target="_blank"><i class="fa-brands fa-github" style="color:black;"></i></a>
 <div align="center" class="watermark"><a href="https://github.com/luckycdev" target="_blank"><h3 style="font-size:15px;color:white;">Made by lucky#9919</h3></a>
