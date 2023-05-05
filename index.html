@@ -1,30 +1,46 @@
 <link href='https://fonts.googleapis.com/css?family=Open Sans' rel='stylesheet'>
 <script src="https://kit.fontawesome.com/bdb0f81e24.js" crossorigin="anonymous"></script>
-<body style="background: linear-gradient(90deg, hsl(251, 55%, 38%) 0%, #85a8ff 100%); font-family: 'Open Sans'; font-size: 22px;">
+<body style="padding-bottom: 50px;background: linear-gradient(90deg, hsl(251, 55%, 38%) 0%, #85a8ff 100%); font-family: 'Open Sans'; font-size: 22px;">
 <h1 style="color:white; text-align: center;">MultiDefine</h1>
-<a href="https://github.com/luckycdev/MultiDefine" target="_blank"><p style="color:white; text-align: center;"><u>Define Multiple Words at Once</u></p></a>
-<p style="color:lightsteelblue; text-align: center;">Seperate words/phrases by a comma (NO SPACES!)</p>
-<p style="color:lightsteelblue; text-align: center;">For example: "food web,dinosaur,apple"</p>
+<h3 style="color:white; text-align: center;"><u>Define Multiple Words at Once</u></h3>
+<h3 style="color:lightsteelblue; text-align: center;">Seperate words/phrases by a comma (NO SPACES!)</h3>
+<h3 style="color:lightsteelblue; text-align: center;">For example: "food web, dinosaur, apple"</h3>
 <div align="center"><textarea id='text' name='text' style="width:500px;height:200px;color:white;background-color:#2e3233;margin:auto" placeholder="Words"></textarea></div>
 <div align="center"><button class="button" onclick="multidefinejs()">Define</button></div>
 <script>
 function multidefinejs(){
 var text = document.getElementById("text");
-var a=text.value;
-var iframe = document.createElement('iframe');
-var b="https://www.dictionary.com/browse/";
-var c=a.split(",");
-var d=(c.length);
-
-for(var i = 0; i < d; i++){
-    iframe.setAttribute("src","")
+var a = text.value;
+var b = "https://www.dictionary.com/browse/";
+var c = a.split(",");
+var d = c.length;
+var getiframes = document.getElementsByTagName('iframe');
+while (getiframes.length > 0) {
+  getiframes[0].parentNode.removeChild(getiframes[0]);
 }
-
-
-
-
-var finalresult=b+c+d;
-iframe.src=finalresult;
+var getp = document.getElementsByTagName('p');
+while (getp.length > 0) {
+  getp[0].parentNode.removeChild(getp[0]);
+}
+for (var i=0;i<d;i++) {
+  var word=c[i].trim();
+  if (word!=='') {
+    var div=document.createElement('div');
+    div.setAttribute('align','center');
+    var p=document.createElement('p');
+    p.innerText=word;
+    var iframe=document.createElement('iframe');
+    iframe.setAttribute('src',b+word);
+    iframe.setAttribute('width','500px');
+    iframe.setAttribute('height','500px');
+    p.style.fontWeight='bold';
+    p.style.textDecoration='underline';
+    p.style.textTransform='uppercase';
+    div.appendChild(p);
+    div.appendChild(iframe);
+    document.body.appendChild(div);
+  }
+}
 }
 </script>
 </body>
@@ -38,6 +54,11 @@ iframe.src=finalresult;
   position:fixed;
   right:50px;
   bottom:10px;
+  }
+  div.watermark{
+    position:fixed;
+    left:10px;
+    bottom:10px;
   }
     .button {
       position: relative;
@@ -74,4 +95,5 @@ iframe.src=finalresult;
     }
     </style>
 <div align="center" class="discord"><a href="https://discord.gg/nAEtSVbcKx" target="_blank"><i class="fa-brands fa-discord" style="color:#5865F2;"></i></a>
-<div align="center" class="github"><a href="https://github.com/luckycdev" target="_blank"><i class="fa-brands fa-github" style="color:black;"></i></a>
+<div align="center" class="github"><a href="https://github.com/luckycdev/MultiDefine" target="_blank"><i class="fa-brands fa-github" style="color:black;"></i></a>
+<div align="center" class="watermark"><a href="https://github.com/luckycdev" target="_blank"><h3 style="font-size:15px;color:white;">Made by lucky#9919</h3></a>
