@@ -4,7 +4,7 @@ Define multiple words at once
 
 instances:
 
-https://multidefine.luckyc.pw
+https://multidefine.luckyc.dev
 
 https://multidefine.vercel.app
 
